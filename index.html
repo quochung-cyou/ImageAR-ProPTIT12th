@@ -32,11 +32,6 @@
                 document.querySelector('#video').play();
             });
         });
-        alert("Loaded video");
-        video.setAttribute('height', '0.75');
-        video.setAttribute('width', '1');
-        video.setAttribute('src', 'sinhnhatvid.mp4');
-        video.play();
         var promise = document.querySelector('#video').play();
         if (promise !== undefined) {
             promise.catch(error => {
