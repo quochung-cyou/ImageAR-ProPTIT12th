@@ -1,0 +1,69 @@
+<html lang="en">
+
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#">
+    <title id="title">PROPTIT AR</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://aframe.io/releases/0.6.1/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.2/dist/mindar-image-aframe.prod.js"></script>
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+</head>
+
+<body>
+    <a-scene mindar-image="imageTargetSrc: https://quochung.cyou/ar/targets.mind;" color-space="sRGB"
+        renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false"
+        device-orientation-permission-ui="enabled: false">
+        <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
+        <a-entity mindar-image-target="targetIndex: 0">
+            <a-video id="video" crossorigin="anonymous" autoplay loop="true" width="1" height="0.75"
+                webkit-playsinline playsinline src="https://quochung.cyou/ar/sinhnhatvid.mp4">
+            </a-video>
+        </a-entity>
+    </a-scene>
+    <script>
+
+        var video = document.querySelector('#video');
+        video.addEventListener('ended', function () {
+            alert("Video đã kết thúc, click vào màn hình để phát lại");
+            window.addEventListener('click', function () {
+                alert("Đang phát lại video");
+
+                document.querySelector('#video').play();
+            });
+        });
+        alert("Loaded video");
+        video.setAttribute('height', '0.75');
+        video.setAttribute('width', '1');
+        video.setAttribute('src', 'https://quochung.cyou/ar/sinhnhatvid.mp4');
+        video.play();
+        setInterval(function () {
+            var video = document.querySelector('#video');
+            if (video.paused) {
+                video.setAttribute('src', 'https://quochung.cyou/ar/sinhnhatvid.mp4');
+                video.play();
+
+            }
+        }, 1000);
+        var promise = document.querySelector('#video').play();
+        if (promise !== undefined) {
+            promise.catch(error => {
+                alert("Không thể phát video, click vào màn hình để phát lại");
+                window.addEventListener('click', function () {
+                    alert("Đang phát lại video");
+                    document.querySelector('#video').play();
+                });
+            }).then(() => {
+                // Auto-play started
+            });
+        }
+
+
+
+    </script>
+
+</body>
+
+
+
+</html>
