@@ -8,31 +8,22 @@ document.addEventListener('DOMContentLoaded', function () {
     });
     sceneEl.addEventListener('arReady', function () {
         alert("Click vào màn hình để phát lại video");
-        window.addEventListener('targetFound', function () {
-            // Get video element by id
-            var videoElement = document.getElementById("video");
+    });
+    window.addEventListener('targetFound', function () {
+        // Get video element by id
+        var videoElement = document.getElementById("video");
+        video.play();
+        alert("Video đang được phát lại");
+    });
+    sceneEl.addEventListener('touchstart', function () {
+        video.play();
+        alert("Video đang được phát lại");
+    });
+    window.addEventListener('click', function () {
+        //Fix the problem of video not play (A-frame)
+        video.play();
+        alert("Video đang được phát lại");
 
-            // Play the video
-            videoElement.play();
-        });
-        sceneEl.addEventListener('touchstart', function () {
-            //Fix the problem of video not play (A-frame)
-            if (video.paused == true) {
-                video.play();
-                alert("Video đang được phát lại");
-            } else {
-                video.pause();
-            }
-        });
-        window.addEventListener('click', function () {
-            //Fix the problem of video not play (A-frame)
-            if (video.paused == true) {
-                video.play();
-                alert("Video đang được phát lại");
-            } else {
-                video.pause();
-            }
 
-        });
     });
 });
