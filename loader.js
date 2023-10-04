@@ -9,10 +9,6 @@ document.addEventListener('DOMContentLoaded', function () {
     sceneEl.addEventListener('arReady', function () {
         alert("Click vào màn hình để phát lại video");
     });
-    window.addEventListener('targetFound', function () {
-        // Get video element by id
-        playVideo();
-    });
     sceneEl.addEventListener('touchstart', function () {
         playVideo();
     });
