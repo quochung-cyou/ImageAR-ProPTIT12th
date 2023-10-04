@@ -8,6 +8,13 @@ document.addEventListener('DOMContentLoaded', function () {
     });
     sceneEl.addEventListener('arReady', function () {
         alert("Click vào màn hình để phát lại video");
+        window.addEventListener('targetFound', function () {
+            // Get video element by id
+            var videoElement = document.getElementById("video");
+
+            // Play the video
+            videoElement.play();
+        });
         sceneEl.addEventListener('touchstart', function () {
             //Fix the problem of video not play (A-frame)
             if (video.paused == true) {
