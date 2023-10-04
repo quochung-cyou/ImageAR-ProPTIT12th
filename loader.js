@@ -11,19 +11,22 @@ document.addEventListener('DOMContentLoaded', function () {
     });
     window.addEventListener('targetFound', function () {
         // Get video element by id
-        var videoElement = document.getElementById("video");
-        video.play();
-        alert("Video đang được phát lại");
+        playVideo();
     });
     sceneEl.addEventListener('touchstart', function () {
-        video.play();
-        alert("Video đang được phát lại");
+        playVideo();
     });
     window.addEventListener('click', function () {
         //Fix the problem of video not play (A-frame)
-        video.play();
-        alert("Video đang được phát lại");
+        playVideo();
 
 
     });
+
+    function playVideo() {
+        video.currentTime = 0;
+        video.pause();
+        video.load();
+        video.play();
+    }
 });
