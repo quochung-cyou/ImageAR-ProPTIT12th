@@ -24,9 +24,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     function playVideo() {
-        video.currentTime = 0;
-        video.pause();
-        video.load();
         video.play();
     }
 });
