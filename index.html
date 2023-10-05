@@ -59,7 +59,7 @@
         videoLoader.setAttribute("visible", true);
 
         const id = setInterval(() => {
-          y += 0.016;
+          y += 0.3;
           if (y >= 0.6) {
             clearInterval(id);
             loadvideoLeft.addEventListener('click', () => {
@@ -235,7 +235,7 @@
           <a-plane src="#card" position="0 0 0" height="0.75" width="1" rotation="0 0 0"></a-plane>
 
           <a-entity visible=false id="videoLoader-panel" position="0 0 -0.01">
-            <a-text value="Click image below to load" color="white" align="center" width="2" position="0 0.4 0"></a-text>
+            <a-text value="Click image below to load" color="white" align="center" width="2" position="0 0.45 0"></a-text>
             <a-entity id="videoLoader-item0">
               <a-video id="video-ar-link" webkit-playsinline playsinline width="1" height="0.75" position="0 0 0"></a-video>
               <a-image id="video-ar-preview-button" class="clickable" src="#video-ar-preview" alpha-test="0.5" position="0 0 0" height="0.75" width="1">
