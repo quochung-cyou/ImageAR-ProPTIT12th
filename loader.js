@@ -8,7 +8,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
     sceneEl.addEventListener('arReady', function () {
         setInterval(function () {
-            arSystem.update();
             playVideo();
         }, 1000 / 30);
     });
@@ -18,8 +17,6 @@ document.addEventListener('DOMContentLoaded', function () {
     window.addEventListener('click', function () {
         //Fix the problem of video not play (A-frame)
         playVideo();
-
-
     });
 
     function playVideo() {
