@@ -47,8 +47,8 @@
         });
       }
 
-      const showPortfolio = (done) => {
-        const portfolio = document.querySelector("#portfolio-panel");
+      const showvideoLoader = (done) => {
+        const videoLoader = document.querySelector("#videoLoader-panel");
         const loadvideoLeft = document.querySelector("#loadvideo-left-button");
         const loadvideoRight = document.querySelector("#loadvideo-right-button");
         const previewButton = document.querySelector("#video-ar-preview-button");
@@ -56,10 +56,10 @@
         let y = 0;
         let currentItem = 0;
 
-        portfolio.setAttribute("visible", true);
+        videoLoader.setAttribute("visible", true);
 
         const id = setInterval(() => {
-          y += 0.008;
+          y += 0.012;
           if (y >= 0.6) {
             clearInterval(id);
             loadvideoLeft.addEventListener('click', () => {
@@ -84,7 +84,7 @@
               done();
             }, 500);
           }
-          portfolio.setAttribute("position", "0 " + y + " -0.01");
+          videoLoader.setAttribute("position", "0 " + y + " -0.01");
         }, 10);
       }
 
@@ -107,7 +107,7 @@
             console.log("target found");
             showAvatar(() => {
               setTimeout(() => {
-                showPortfolio(() => {
+                showvideoLoader(() => {
                   setTimeout(() => {
                     showInfo();
                   }, 300);
@@ -232,11 +232,11 @@
         </a-camera>
 
         <a-entity id="mytarget" mytarget mindar-image-target="targetIndex: 0">
-          <a-plane src="#card" position="0 0 0" height="0.552" width="1" rotation="0 0 0"></a-plane>
+          <a-plane src="#card" position="0 0 0" height="0.75" width="1" rotation="0 0 0"></a-plane>
 
-          <a-entity visible=false id="portfolio-panel" position="0 0 -0.01">
+          <a-entity visible=false id="videoLoader-panel" position="0 0 -0.01">
             <a-text value="Click image below to load" color="white" align="center" width="2" position="0 0.4 0"></a-text>
-            <a-entity id="portfolio-item0">
+            <a-entity id="videoLoader-item0">
               <a-video id="video-ar-link" webkit-playsinline playsinline width="1" height="0.75" position="0 0 0"></a-video>
               <a-image id="video-ar-preview-button" class="clickable" src="#video-ar-preview" alpha-test="0.5" position="0 0 0" height="0.75" width="1">
               </a-image>
