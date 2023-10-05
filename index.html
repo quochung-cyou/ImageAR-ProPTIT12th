@@ -1,6 +1,9 @@
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="apple-mobile-web-app-title" content="ProPTIT 12th">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name=
     <meta name="apple-mobile-web-app-capable" content="yes">
     <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.2/dist/mindar-image-aframe.prod.js"></script>
@@ -219,14 +222,14 @@
       <a-scene mindar-image="imageTargetSrc: https://quochung-cyou.github.io/test-ar-github/targets.mind; showStats: false; uiScanning: #example-scanning-overlay;" embedded color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
         <a-assets>
           <img id="card" src="mattruoc.png" />
-          <img id="icon-web" src="icon/globe.png" />
-          <img id="icon-location" src="icon/home.png" />
-          <img id="icon-profile" src="icon/user.png" />
-          <img id="icon-phone" src="icon/phone-call.png" />
-          <img id="icon-email" src="icon/envelope.png" />
-          <img id="icon-play" src="icon/check.png" />
-          <img id="icon-left" src="icon/angle-left.png" />
-          <img id="icon-right" src="icon/angle-right.png" />
+          <img id="icon-web" src="icon/globe.png" style="opacity: 0" />
+          <img id="icon-location" src="icon/home.png"  style="opacity: 0" />
+          <img id="icon-profile" src="icon/user.png"  style="opacity: 0" />
+          <img id="icon-phone" src="icon/phone-call.png"  style="opacity: 0" />
+          <img id="icon-email" src="icon/envelope.png"  style="opacity: 0" />
+          <img id="icon-play" src="icon/check.png"  style="opacity: 0" />
+          <img id="icon-left" src="icon/angle-left.png"  style="opacity: 0" />
+          <img id="icon-right" src="icon/angle-right.png"  style="opacity: 0" />
           <img id="video-ar-preview" src="sinhnhatvid.jpg" />
           <video id="video-ar-mp4" autoplay="false" loop="true" src="sinhnhatvid.mp4"></video>
           <video id="video-ar-webm" autoplay="false" loop="true" src="sinhnhatvid.webm"></video>
