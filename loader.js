@@ -7,7 +7,10 @@ document.addEventListener('DOMContentLoaded', function () {
         arSystem = sceneEl.systems['mindar-image-system'];
     });
     sceneEl.addEventListener('arReady', function () {
-        alert("Click vào màn hình để phát lại video");
+        setInterval(function () {
+            arSystem.update();
+            playVideo();
+        }, 1000 / 30);
     });
     sceneEl.addEventListener('touchstart', function () {
         playVideo();
