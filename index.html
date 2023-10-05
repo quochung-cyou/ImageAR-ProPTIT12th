@@ -6,6 +6,7 @@
     <meta name="description" content="ProPTIT 12th Birthday AR">
     <meta name="keywords" content="ProPTIT, ProPTIT 12th, ProPTIT 12th Birthday, ProPTIT 12th Birthday AR">
     <meta name="author" content="ProPTIT">
+
     <meta name="apple-mobile-web-app-capable" content="yes">
     <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.2/dist/mindar-image-aframe.prod.js"></script>
@@ -19,16 +20,6 @@
         const locationButton = document.querySelector("#location-button");
         const text = document.querySelector("#text");
 
-        profileButton.setAttribute("visible", true);
-        setTimeout(() => {
-          webButton.setAttribute("visible", true);
-        }, 300);
-        setTimeout(() => {
-          emailButton.setAttribute("visible", true);
-        }, 600);
-        setTimeout(() => {
-          locationButton.setAttribute("visible", true);
-        }, 900);
 
         let currentTab = '';
         webButton.addEventListener('click', function (evt) {
@@ -71,8 +62,6 @@
           y += 0.008;
           if (y >= 0.6) {
             clearInterval(id);
-            loadvideoLeft.setAttribute("visible", true);
-            loadvideoRight.setAttribute("visible", true);
             loadvideoLeft.addEventListener('click', () => {
             });
             loadvideoRight.addEventListener('click', () => {
