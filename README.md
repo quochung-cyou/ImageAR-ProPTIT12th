@@ -44,7 +44,7 @@ This project is licensed under the MIT License.
 
 **Additional Information**
 
-* This project was created by [name] for [purpose].
+* This project was created by quochung-cyou for the 12th birthday of ProPTIT.
 * The project was created using the following technologies:
     * ImageAR SDK
     * Mindar library
